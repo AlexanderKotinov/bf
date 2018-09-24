@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "baby-fitness"
+  "defaultProject": "baby-fitness",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
