@@ -4,16 +4,24 @@ import { MainComponent } from './main/main.component';
 import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './navigation/header/header.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import {PublicRoutingModule} from './public-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    PublicRoutingModule
   ],
   declarations: [
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidenavListComponent,
+    SignUpComponent,
+    SignInComponent
   ]
 })
 export class PublicModule { }
