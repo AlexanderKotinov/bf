@@ -1,14 +1,15 @@
 <section>
   <h3>Sign In</h3>
-  <form fxLayout="column" fxLayoutAlign="center center">
+  <form fxLayout="column" fxLayoutAlign="center center" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input type="email" matInput placeholder="Email">
+      <input type="email" matInput placeholder="Email" formControlName="email">
     </mat-form-field>
     <mat-form-field>
-      <input type="password" matInput placeholder="Password">
+      <input type="password" matInput placeholder="Password" formControlName="password">
     </mat-form-field>
     <button type="submit"
             mat-raised-button
-            color="primary">Submit</button>
+            color="primary"
+            [disabled]="!signInForm.valid">Submit</button>
   </form>
 </section>

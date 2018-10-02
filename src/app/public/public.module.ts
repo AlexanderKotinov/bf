@@ -8,13 +8,15 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import {PublicRoutingModule} from './public-routing.module';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
-    PublicRoutingModule
+    PublicRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [
     MainComponent,

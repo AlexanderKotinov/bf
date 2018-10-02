@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PublicModule } from './public/public.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularfireModule } from './angularfire.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AngularfireModule } from './angularfire.module';
     AppRoutingModule,
     PublicModule,
     FlexLayoutModule,
-    AngularfireModule
+    AngularfireModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
