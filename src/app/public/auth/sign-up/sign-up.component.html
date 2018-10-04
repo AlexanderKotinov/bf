@@ -1,4 +1,21 @@
-<div fxLayoutAlign="center center">
+<section>
   <h3>Sign Up</h3>
-  <form></form>
-</div>
+  <form class="auth" [formGroup]="signUpForm" fxLayout="column" fxLayoutAlign="center center">
+    <mat-form-field>
+      <input type="text" matInput formControlName="firstName" placeholder="First Name">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput formControlName="lastName" placeholder="Last Name">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="email" matInput formControlName="email" placeholder="Email">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput formControlName="password" placeholder="Password">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput formControlName="confirmPassword" placeholder="Password Confirmation">
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+  </form>
+</section>
