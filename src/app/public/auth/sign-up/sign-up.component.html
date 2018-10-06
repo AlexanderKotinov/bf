@@ -1,6 +1,6 @@
 <section>
   <h3>Sign Up</h3>
-  <form class="auth" [formGroup]="signUpForm" fxLayout="column" fxLayoutAlign="center center">
+  <form class="auth" [formGroup]="signUpForm" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="onSubmit()">
     <mat-form-field>
       <input type="text" matInput formControlName="firstName" placeholder="First Name">
     </mat-form-field>

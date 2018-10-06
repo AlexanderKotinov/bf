@@ -15,6 +15,10 @@ export class SignUpComponent implements OnInit {
     this._signUpFormInit();
   }
 
+  onSubmit() {
+    console.log(this.signUpForm.value);
+  }
+
   private _signUpFormInit() {
     this.signUpForm = new FormGroup({
       firstName: new FormControl(null, Validators.required),
