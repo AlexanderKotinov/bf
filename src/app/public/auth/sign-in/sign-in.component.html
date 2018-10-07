@@ -1,11 +1,19 @@
 <section>
   <h3>Sign In</h3>
-  <form fxLayout="column" fxLayoutAlign="center center" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <form fxLayout="column"
+        fxLayoutAlign="center center"
+        [formGroup]="signInForm"
+        (ngSubmit)="onSubmit()"
+        fxLayoutGap="15px">
     <mat-form-field>
       <input type="email" matInput placeholder="Email" formControlName="email">
+      <mat-error *ngIf="signInForm.controls['email'].hasError('email')">Email invalid!</mat-error>
+      <mat-error *ngIf="signInForm.controls['email'].hasError('required')">Field must be not empty!</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input type="password" matInput placeholder="Password" formControlName="password">
+      <mat-error *ngIf="signInForm.controls['password'].hasError('minlength')">Password invalid!</mat-error>
+      <mat-error *ngIf="signInForm.controls['password'].hasError('required')">Field must be not empty!</mat-error>
     </mat-form-field>
     <button type="submit"
             mat-raised-button

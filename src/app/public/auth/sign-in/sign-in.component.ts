@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,7 +10,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class SignInComponent implements OnInit {
   signInForm: FormGroup;
 
-  constructor() { }
+  constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this._signInFormInit();
@@ -17,6 +18,11 @@ export class SignInComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signInForm.value);
+    this.openSnackBar('hello');
+  }
+
+  openSnackBar(msg) {
+    this._snackBar.open(msg, '', { duration: 3000 });
   }
 
   private _signInFormInit() {
