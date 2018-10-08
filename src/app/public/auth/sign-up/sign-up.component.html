@@ -1,20 +1,32 @@
 <section>
   <h3>Sign Up</h3>
-  <form class="auth" [formGroup]="signUpForm" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="onSubmit()">
+  <form class="auth"
+        [formGroup]="signUpForm"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        fxLayoutGap="15px"
+        (ngSubmit)="onSubmit()">
     <mat-form-field>
       <input type="text" matInput formControlName="firstName" placeholder="First Name">
+      <mat-error *ngIf="signUpForm.controls['firstName'].hasError('required')">First name required!</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input type="text" matInput formControlName="lastName" placeholder="Last Name">
+      <mat-error *ngIf="signUpForm.controls['lastName'].hasError('required')">Last name required!</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input type="email" matInput formControlName="email" placeholder="Email">
+      <mat-error *ngIf="signUpForm.controls['email'].hasError('required')">Email required!</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input type="password" matInput formControlName="password" placeholder="Password">
+      <mat-error *ngIf="signUpForm.controls['password'].hasError('required')">Password required!</mat-error>
+      <mat-error *ngIf="signUpForm.controls['password'].hasError('minlength')">Password must contain 5 characters minimum!</mat-error>
+      <mat-error *ngIf="signUpForm.controls['password'].hasError('maxlength')">Password must contain 10 characters maximum!</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input type="password" matInput formControlName="confirmPassword" placeholder="Password Confirmation">
+      <mat-error *ngIf="signUpForm.controls['confirmPassword'].hasError('required')">Password Confirmation required!</mat-error>
     </mat-form-field>
     <button type="submit" mat-raised-button color="primary">Submit</button>
   </form>
