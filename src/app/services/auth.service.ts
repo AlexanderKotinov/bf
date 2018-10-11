@@ -17,7 +17,7 @@ export class AuthService {
     // this._uiService.loadingStateChanged.next(true);
     this._auth.auth.createUserWithEmailAndPassword(authData.email, authData.password)
       .then(res => {
-        this._auth.auth.updateCurrentUser(_user).then((response) =>
+        this._auth.auth.updateCurrentUser(this._user).then((response) =>
         {
           console.log(response);
         });
