@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { User } from '../models/user.model';
 import {BehaviorSubject, Observable} from 'rxjs/index';
 import * as firebase from 'firebase/app';
-import {AngularFireStorage} from "@angular/fire/storage";
-import {Router} from "@angular/router";
-import {AngularFirestore} from "@angular/fire/firestore";
+import {Router} from '@angular/router';
+import {AngularFirestore} from '@angular/fire/firestore';
 
 
 @Injectable({
@@ -16,15 +14,14 @@ export class AuthService {
   logged = new BehaviorSubject(false);
 
   constructor(private _auth: AngularFireAuth,
-              private _afs: AngularFirestore, ,
+              private _afs: AngularFirestore,
               private _router: Router) { }
 
-  registerUser(authData: User): void {
+  registerUser(authData: any): void {
     // this._uiService.loadingStateChanged.next(true);
     this._auth.auth.createUserWithEmailAndPassword(authData.email, authData.password)
       .then(res => {
-        this._auth.auth.updateCurrentUser(this._user).then((response) =>
-        {
+        this._auth.auth.updateCurrentUser(authData).then((response) => {
           console.log(response);
         });
         // this._uiService.loadingStateChanged.next(false);

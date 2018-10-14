@@ -9,6 +9,8 @@ import { PublicModule } from './public/public.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularfireModule } from './angularfire.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     PublicModule,
     FlexLayoutModule,
     AngularfireModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
