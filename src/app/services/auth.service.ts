@@ -19,22 +19,25 @@ export class AuthService {
 
   registerUser(authData: any): void {
     // this._uiService.loadingStateChanged.next(true);
+    console.log(authData);
     this._auth.auth.createUserWithEmailAndPassword(authData.email, authData.password)
       .then(res => {
-        this._auth.auth.updateCurrentUser(authData).then((response) => {
-          console.log(response);
-        });
+        console.log(res);
+        // this._auth.auth.updateCurrentUser(authData).then((response) => {
+        //   console.log(response);
+        // });
         // this._uiService.loadingStateChanged.next(false);
         // this._router.navigate(['/training']);
       })
       .catch(error => {
+        console.log(error);
         // this._uiService.loadingStateChanged.next(false);
         // this._uiService.showError(error.message, null, 4000);
       });
   }
 
   login(authData: any): void {
-    this._auth.auth.signInWithEmailAndPassword(authData.email, authData.email)
+    this._auth.auth.signInWithEmailAndPassword(authData.email, authData.password)
       .then(() => {
         this._user = this._auth.authState;
       })

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
-import {environment} from '../environments/environment';
+import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [
