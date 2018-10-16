@@ -4,6 +4,7 @@ import {BehaviorSubject, Observable} from 'rxjs/index';
 import * as firebase from 'firebase/app';
 import {Router} from '@angular/router';
 import {AngularFirestore} from '@angular/fire/firestore';
+import {UiService} from "../shared/ui.service";
 
 
 @Injectable({
@@ -15,7 +16,8 @@ export class AuthService {
 
   constructor(private _auth: AngularFireAuth,
               private _afs: AngularFirestore,
-              private _router: Router) { }
+              private _router: Router,
+              private _uiService: UiService) { }
 
   registerUser(authData: any): void {
     // this._uiService.loadingStateChanged.next(true);
@@ -43,6 +45,7 @@ export class AuthService {
       })
       .catch(error => {
         console.log(error);
+        this._uiService.showError(error.message, null, 4000);
       });
   }
 

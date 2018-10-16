@@ -14,7 +14,7 @@ import {
     MatIconModule,
     MatListModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   declarations: [],
   exports: [
